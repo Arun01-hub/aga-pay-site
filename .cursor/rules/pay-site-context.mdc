@@ -1,0 +1,10 @@
+---
+description: Aga Pay marketing site context
+alwaysApply: true
+---
+
+# Pay Site
+
+- No backend API in this repo; static marketing only.
+- Section components under `components/sections/`; shared UI under `components/ui/`.
+- CI in `.github/workflows/ci.yml` — keep `npm run build` passing on PRs.

@@ -2,6 +2,8 @@
 
 Modern marketing landing page for **aga-pay** — a payroll & HR platform.
 
+**Aganox catalog**: [APP_CATALOG](https://github.com/Arun01-hub/aganox-standards/blob/main/docs/APP_CATALOG.md) · **Target org repo**: `aganox/pay-site`
+
 ## Tech Stack
 
 - [Next.js 15](https://nextjs.org/) (App Router)
@@ -9,6 +11,8 @@ Modern marketing landing page for **aga-pay** — a payroll & HR platform.
 - [Tailwind CSS v4](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Lucide React](https://lucide.dev/) icons
+
+AI-assisted development: see [AGENTS.md](AGENTS.md) and [Aganox AI standards](https://github.com/Arun01-hub/aganox-standards/blob/main/docs/AI_DRIVEN_DEVELOPMENT.md).
 
 ## Getting Started
 
