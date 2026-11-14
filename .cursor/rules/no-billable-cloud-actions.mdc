@@ -1,0 +1,50 @@
+---
+description: Forbid billable or paid Azure and Cloudflare operations when using Cursor MCP tools
+alwaysApply: true
+---
+
+# No billable Azure or Cloudflare actions in Cursor
+
+**Strict policy:** The agent must **never** perform billable, paid, or cost-incurring actions on **Microsoft Azure** or **Cloudflare** through Cursor (including Azure MCP, Cloudflare MCP, shell commands against cloud APIs, or infrastructure-as-code apply that would create paid resources).
+
+## Allowed without extra approval
+
+- Read-only discovery: list subscriptions, resource groups, DNS records, zones, repositories, costs (query only), documentation search
+- Local development that does not provision or change cloud resources
+- Drafting configs, Bicep/Terraform, Wrangler, and documentation **in the repo only** (no deploy/apply)
+
+## Forbidden without explicit written user approval outside this rule
+
+The following are **not** allowed through Cursor even if the user asks casually in chat—user must explicitly override this rule in the same message (e.g. “I accept billable risk, proceed with X”):
+
+### Azure
+
+- Creating or scaling resources that consume quota or incur charges (VMs, AKS, SQL, Cosmos, App Service paid SKUs, Container Apps with non-free workload, Redis, cognitive services, public IPs, etc.)
+- Changing subscription billing, plans, reservations, or marketplace purchases
+- Deployments (`create_deployment`, `create_or_update_resource`, etc.) unless the user has confirmed **free tier / $0 SKU** in that same request
+- Deleting resources that trigger early termination fees (rare on Azure but still avoid destructive ops without approval)
+
+### Cloudflare
+
+- Upgrading zone plans (Pro/Business/Enterprise), Workers paid plans, or add-ons that bill
+- Enabling or purchasing products with usage-based billing beyond documented free allowances
+- Creating large-scale Workers/Pages/R2/D1 usage patterns intended for production scale without confirming free-tier fit
+- Any API call whose documented outcome is a **paid** feature or plan change
+
+## When a change is free but ambiguous
+
+1. **Stop** and state estimated cost tier (free vs unknown).
+2. **Ask** the user to confirm before any mutating MCP or deploy command.
+3. **Prefer** free/community tier only (Azure Free/Student SKUs, Cloudflare Free Website, free Workers/Pages tiers).
+
+## Mutations that are usually OK on free tiers (still ask first)
+
+- Cloudflare DNS record or SSL setting changes on an existing **Free** zone (no plan upgrade)
+- GitHub-only changes (not in scope unless they trigger paid Actions beyond free minutes—warn if unsure)
+
+If unsure whether an operation is billable, **treat it as billable and do not execute**.
+
+## Implementation discipline
+
+- Do not run `az deployment`, `terraform apply`, `wrangler deploy`, or Cloudflare `execute` **write** paths as part of routine tasks unless the user has confirmed zero billing impact.
+- Record in ADRs or checklists when a future step might cost money; keep that work manual or outside Cursor until approved.
