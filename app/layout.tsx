@@ -16,21 +16,21 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aga-pay.com"),
-  title: "aga-pay — Payroll & HR made simple",
+  title: "aga-pay — AI-Powered HR & Payroll for Modern Indian Businesses",
   description:
-    "Manage employees, payroll, attendance and more from one simple platform. Built for growing businesses.",
+    "AI-native HR and payroll for Indian businesses. Automate operations, simplify statutory payroll, and stay in control with human approval workflows.",
   openGraph: {
-    title: "aga-pay — Payroll & HR made simple",
+    title: "aga-pay — AI-Powered HR & Payroll for Modern Indian Businesses",
     description:
-      "Manage employees, payroll, attendance and more from one simple platform.",
+      "Automate HR operations, simplify payroll, and let AI handle repetitive work — while you stay in control.",
     type: "website",
     siteName: "aga-pay",
   },
   twitter: {
     card: "summary_large_image",
-    title: "aga-pay — Payroll & HR made simple",
+    title: "aga-pay — AI-Powered HR & Payroll for Modern Indian Businesses",
     description:
-      "Manage employees, payroll, attendance and more from one simple platform.",
+      "AI-native HR and payroll platform built for Indian statutory compliance and human-approved workflows.",
   },
   icons: {
     icon: "/icon.svg",

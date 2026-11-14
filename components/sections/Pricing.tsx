@@ -17,7 +17,7 @@ export function Pricing() {
       <Container>
         <SectionHeading
           title="Simple, transparent pricing"
-          subtitle="Start free and scale as your team grows. No hidden fees."
+          subtitle="Start with AI-assisted HR and payroll. Scale statutory compliance and approval workflows as you grow."
         />
 
         <div className="mt-10 flex items-center justify-center gap-4">

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { navLinks, siteConfig } from "@/lib/content";
+import { heroContent, navLinks, siteConfig } from "@/lib/content";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
@@ -68,8 +68,8 @@ export function Header() {
             >
               Login
             </Link>
-            <Button href={siteConfig.links.demo} size="sm">
-              Book a Demo
+            <Button href={siteConfig.links.startFree} size="sm">
+              {heroContent.primaryCta}
             </Button>
           </div>
 
@@ -109,11 +109,19 @@ export function Header() {
                 Login
               </Link>
               <Button
-                href={siteConfig.links.demo}
+                href={siteConfig.links.startFree}
                 className="w-full text-center"
                 onClick={() => setMobileOpen(false)}
               >
-                Book a Demo
+                {heroContent.primaryCta}
+              </Button>
+              <Button
+                href={siteConfig.links.demo}
+                variant="outline"
+                className="w-full text-center"
+                onClick={() => setMobileOpen(false)}
+              >
+                {heroContent.secondaryCta}
               </Button>
             </div>
           </Container>

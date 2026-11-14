@@ -9,9 +9,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function PlatformShowcase() {
   return (
-    <section id="product" className="bg-muted-bg py-20 lg:py-28">
+    <section id="product" className="py-20 lg:py-28">
       <Container>
-        <SectionHeading title="One platform. Less manual work." />
+        <SectionHeading
+          title="One AI-native platform for HR and payroll"
+          subtitle="Unify employee records, attendance, leave, salary, and Indian statutory payroll — with an intelligent layer that helps you analyze, automate, and approve."
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

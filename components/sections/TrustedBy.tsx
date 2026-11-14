@@ -6,7 +6,7 @@ export function TrustedBy() {
     <section className="border-y border-border bg-muted-bg py-12">
       <Container>
         <p className="text-center text-sm font-medium uppercase tracking-wider text-muted">
-          Trusted by growing businesses
+          Trusted by growing Indian businesses
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {trustedByLogos.map((name) => (

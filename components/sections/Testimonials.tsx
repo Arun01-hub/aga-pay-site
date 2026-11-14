@@ -8,11 +8,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Testimonials() {
   return (
-    <section className="bg-muted-bg py-20 lg:py-28">
+    <section className="py-20 lg:py-28">
       <Container>
         <SectionHeading
-          title="Loved by HR teams everywhere"
-          subtitle="See what business leaders say about simplifying payroll with aga-pay."
+          title="Trusted by HR and finance teams in India"
+          subtitle="Leaders use aga-pay to reduce manual payroll work, stay statutory-ready, and keep humans in control of sensitive decisions."
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">

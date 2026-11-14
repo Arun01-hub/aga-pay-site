@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { TrustedBy } from "@/components/sections/TrustedBy";
+import { AIInAction } from "@/components/sections/AIInAction";
 import { Features } from "@/components/sections/Features";
 import { PlatformShowcase } from "@/components/sections/PlatformShowcase";
 import { Benefits } from "@/components/sections/Benefits";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustedBy />
+        <AIInAction />
         <Features />
         <PlatformShowcase />
         <Benefits />

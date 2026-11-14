@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/content";
+import { heroContent, siteConfig } from "@/lib/content";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
@@ -10,11 +10,12 @@ export function FinalCTA() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(20,184,166,0.3),transparent_50%)]" />
           <div className="relative">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Ready to simplify payroll?
+              Ready for AI-native HR and payroll?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-100">
-              Join growing businesses that trust aga-pay to manage their
-              workforce. Start free — no credit card required.
+              Join Indian businesses using aga-pay to automate operations, simplify
+              statutory payroll, and stay in control. Start free — no credit card
+              required.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
@@ -23,7 +24,7 @@ export function FinalCTA() {
                 size="lg"
                 className="min-w-[180px] text-center"
               >
-                Start Free
+                {heroContent.primaryCta}
               </Button>
               <Button
                 href={siteConfig.links.demo}
@@ -31,7 +32,7 @@ export function FinalCTA() {
                 size="lg"
                 className="min-w-[180px] border-white/30 bg-white/10 text-white hover:bg-white/20 text-center"
               >
-                Book a Demo
+                {heroContent.secondaryCta}
               </Button>
             </div>
           </div>

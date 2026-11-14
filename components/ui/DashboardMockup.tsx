@@ -1,5 +1,6 @@
 "use client";
 
+import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DashboardMockupProps {
@@ -72,6 +73,31 @@ export function DashboardMockup({
 
         {/* Main content */}
         <div className={cn("flex-1", isShowcase ? "p-6" : "p-4")}>
+          {/* AI prompt bar — hero */}
+          {!isShowcase && (
+            <div className="mb-4 flex items-center gap-2 rounded-lg border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 px-3 py-2.5">
+              <Sparkles className="h-4 w-4 shrink-0 text-primary" />
+              <span className="truncate text-xs font-medium text-foreground sm:text-sm">
+                Prepare September payroll for review…
+              </span>
+            </div>
+          )}
+
+          {isShowcase && (
+            <div className="mb-4 rounded-lg border border-border bg-muted-bg p-3">
+              <div className="flex items-center gap-2 text-xs text-muted">
+                <Sparkles className="h-3.5 w-3.5 text-primary" />
+                AI Copilot
+              </div>
+              <p className="mt-2 text-sm font-medium text-foreground">
+                &ldquo;Why did Ravi&apos;s salary change this month?&rdquo;
+              </p>
+              <p className="mt-1 text-xs text-muted leading-relaxed">
+                Salary revision on 12 Sep + 2 LOP days — view calculation trace
+              </p>
+            </div>
+          )}
+
           {/* Stats row */}
           <div
             className={cn(
@@ -81,10 +107,10 @@ export function DashboardMockup({
           >
             {[
               { label: "Employees", value: "248", color: "bg-indigo-500" },
-              { label: "Payroll", value: "$842K", color: "bg-teal-500" },
+              { label: "Payroll", value: "₹84.2L", color: "bg-teal-500" },
               { label: "Attendance", value: "96%", color: "bg-violet-500" },
               ...(isShowcase
-                ? [{ label: "Pending", value: "12", color: "bg-amber-500" }]
+                ? [{ label: "Awaiting approval", value: "1", color: "bg-amber-500" }]
                 : []),
             ].map((stat) => (
               <div
@@ -134,9 +160,13 @@ export function DashboardMockup({
           {/* Table rows */}
           {isShowcase && (
             <div className="mt-4 space-y-2">
-              {[1, 2, 3].map((row) => (
+              {[
+                { status: "Ready for approval", tone: "bg-amber-100 text-amber-800" },
+                { status: "Processed", tone: "bg-teal-100 text-teal-800" },
+                { status: "Processed", tone: "bg-teal-100 text-teal-800" },
+              ].map((row, i) => (
                 <div
-                  key={row}
+                  key={i}
                   className="flex items-center gap-3 rounded-lg border border-border p-3"
                 >
                   <div className="h-8 w-8 rounded-full bg-slate-200" />
@@ -144,7 +174,14 @@ export function DashboardMockup({
                     <div className="h-2 w-32 rounded bg-slate-300" />
                     <div className="h-2 w-20 rounded bg-slate-200" />
                   </div>
-                  <div className="h-6 w-16 rounded-full bg-teal-100" />
+                  <div
+                    className={cn(
+                      "rounded-full px-2 py-0.5 text-[10px] font-medium",
+                      row.tone
+                    )}
+                  >
+                    {row.status}
+                  </div>
                 </div>
               ))}
             </div>

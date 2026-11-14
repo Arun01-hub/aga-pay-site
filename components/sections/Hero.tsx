@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteConfig } from "@/lib/content";
+import { heroContent, siteConfig } from "@/lib/content";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { DashboardMockup } from "@/components/ui/DashboardMockup";
@@ -17,22 +17,21 @@ export function Hero() {
             transition={{ duration: 0.6 }}
           >
             <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
-              Payroll &amp; HR platform
+              {heroContent.badge}
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              {siteConfig.tagline.split(",")[0]},
-              <span className="text-gradient"> remarkably simple</span>
+              {heroContent.headline}{" "}
+              <span className="text-gradient">{heroContent.headlineHighlight}</span>
             </h1>
-            <p className="mt-6 text-lg text-muted sm:text-xl">
-              Manage employees, payroll, attendance and more from one simple
-              platform.
+            <p className="mt-6 text-lg text-muted sm:text-xl leading-relaxed">
+              {heroContent.subheadline}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button href={siteConfig.links.startFree} size="lg">
-                Start Free
+                {heroContent.primaryCta}
               </Button>
               <Button href={siteConfig.links.demo} variant="outline" size="lg">
-                Book a Demo
+                {heroContent.secondaryCta}
               </Button>
             </div>
           </motion.div>

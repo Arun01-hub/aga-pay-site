@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Aganox repository standards
+    url: https://github.com/Arun01-hub/aganox-standards
+    about: Naming, catalog, and org migration
